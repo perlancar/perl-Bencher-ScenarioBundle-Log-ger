@@ -8,7 +8,7 @@ use strict;
 use warnings;
 
 our $scenario = {
-    summary => 'Benchmark Log::Ger logging speed with the default/null output',
+    summary => 'Benchmark Log::ger logging speed with the default/null output',
     participants => [
         {
             name => 'Log::ger-1mil_log_trace',
