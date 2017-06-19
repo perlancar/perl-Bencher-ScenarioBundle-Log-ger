@@ -16,7 +16,7 @@ our $scenario = {
         },
         {
             name => 'Log::ger-1mil_log_is_trace',
-            perl_cmdline_template => ['-MLog::ger', '-e', 'for(1..1_000_000) { log_is_trace(q[]) }'],
+            perl_cmdline_template => ['-MLog::ger', '-e', 'for(1..1_000_000) { log_is_trace() }'],
         },
         {
             name => 'Log::ger+Log::ger::OptAway-1mil_log_trace',
