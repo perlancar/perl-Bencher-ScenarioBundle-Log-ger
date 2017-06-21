@@ -9,6 +9,11 @@ use warnings;
 
 our $scenario = {
     summary => 'Benchmark Log::ger logging speed with the default/null output',
+    modules => {
+        'Log::ger' => {version=>'0.002'},
+        'Log::Any' => {},
+        'Log::Fast' => {},
+    },
     participants => [
         {
             name => 'Log::ger-1mil_log_trace',
@@ -21,6 +26,11 @@ our $scenario = {
         {
             name => 'Log::ger+Log::ger::OptAway-1mil_log_trace',
             perl_cmdline_template => ['-MLog::ger::OptAway', '-MLog::ger', '-e', 'for(1..1_000_000) { log_trace(q[]) }'],
+        },
+
+        {
+            name => 'Log::Fast-1mil_DEBUG',
+            perl_cmdline_template => ['-MLog::Fast', '-e', '$LOG = Log::Fast->global; $LOG->level("INFO"); for(1..1_000_000) { $LOG->DEBUG(q()) }'],
         },
 
         {
