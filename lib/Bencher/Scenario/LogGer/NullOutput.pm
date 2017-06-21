@@ -32,6 +32,10 @@ our $scenario = {
             name => 'Log::Fast-1mil_DEBUG',
             perl_cmdline_template => ['-MLog::Fast', '-e', '$LOG = Log::Fast->global; $LOG->level("INFO"); for(1..1_000_000) { $LOG->DEBUG(q()) }'],
         },
+        {
+            name => 'Log::Fast-1mil_is_debug',
+            perl_cmdline_template => ['-MLog::Fast', '-e', '$LOG = Log::Fast->global; for(1..1_000_000) { $LOG->level() eq "DEBUG" }'],
+        },
 
         {
             name => 'Log::Any-no_adapter-1mil_log_trace',
