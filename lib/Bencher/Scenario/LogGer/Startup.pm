@@ -9,7 +9,7 @@ use warnings;
 
 our $scenario = {
     modules => {
-        'Log::ger' => {version=>'0.002'},
+        'Log::ger' => {version=>'0.005'},
     },
     participants => [
         {name=>"baseline", perl_cmdline => ["-e1"]},
@@ -17,7 +17,7 @@ our $scenario = {
         {name=>"use Log::ger ()", module=>'Log::ger', perl_cmdline => ["-mLog::ger", "-e1"]},
 
         {name=>"use Log::ger" , module=>'Log::ger', perl_cmdline => ["-MLog::ger", "-e1"]},
-        {name=>"use Log::ger + use Log::ger::OptAway" , module=>'Log::ger::OptAway', perl_cmdline => ["-MLog::ger::OptAway", "-MLog::ger", "-e1"]},
+        {name=>"use Log::ger + use Log::ger::Plugin::OptAway" , module=>'Log::ger::Plugin::OptAway', perl_cmdline => ["-MLog::ger::Plugin::OptAway", "-MLog::ger", "-e1"]},
         {name=>"use Log::ger + use Log::ger::Output::Screen" , module=>'Log::ger::Output::Screen', perl_cmdline => ["-MLog::ger", "-MLog::ger::Output=Screen", "-e1"]},
 
         {name=>"use Log::Any" , module=>'Log::Any', perl_cmdline => ["-MLog::Any", "-e1"]},
