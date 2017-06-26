@@ -9,7 +9,7 @@ use warnings;
 
 our $scenario = {
     modules => {
-        'Log::ger' => {version=>'0.005'},
+        'Log::ger' => {version=>'0.007'},
     },
     participants => [
         {name=>"baseline", perl_cmdline => ["-e1"]},
