@@ -31,7 +31,6 @@ our %output_modules = (
 
 our $scenario = {
     modules => {
-        'Log::ger' => {version=>'0.005'},
     },
     participants => [
         {name=>"baseline", perl_cmdline => ["-e1"]},
