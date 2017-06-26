@@ -26,6 +26,8 @@ our %output_modules = (
     Callback => {},
     FileWriteRotate => { dir => $dname, prefix => 'prefix' },
     DirWriteRotate => { path => $dname },
+    LogAny => {},
+    LogDispatchOutput => { output => 'ArrayWithLimits', args => {array => $ary} },
     Composite => { outputs => {Screen => {conf=>{}}, File => {conf=>{path=>$fname}}} },
 );
 
