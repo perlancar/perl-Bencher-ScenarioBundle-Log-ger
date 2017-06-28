@@ -1,3 +1,8 @@
+0.006   2017-06-28 (PERLANCAR)
+
+	- NullOutput: Add participant: Log::ger+LGP:SingleLog.
+
+
 0.005   2017-06-26 (PERLANCAR)
 
 	- Add scenario: LogGer::OutputStartup.
