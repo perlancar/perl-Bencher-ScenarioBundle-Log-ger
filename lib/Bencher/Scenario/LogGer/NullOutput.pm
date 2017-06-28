@@ -16,6 +16,7 @@ our $scenario = {
         'Log::Any' => {},
         'Log::Fast' => {},
         'Log::Log4perl' => {},
+        'Log::Log4perl::Tiny' => {},
     },
     participants => [
         {
