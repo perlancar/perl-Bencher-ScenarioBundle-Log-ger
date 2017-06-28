@@ -1,3 +1,8 @@
+0.007   2017-06-30 (PERLANCAR)
+
+        - Add participants: Log::Log4perl & Log::Log4perl::Tiny.
+
+
 0.006   2017-06-28 (PERLANCAR)
 
 	- NullOutput: Add participant: Log::ger+LGP:SingleLog.
