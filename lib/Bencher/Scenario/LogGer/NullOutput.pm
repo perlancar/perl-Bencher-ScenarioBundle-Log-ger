@@ -15,6 +15,7 @@ our $scenario = {
         'Log::ger::Plugin::OptAway' => {},
         'Log::Any' => {},
         'Log::Fast' => {},
+        'Log::Log4perl' => {},
     },
     participants => [
         {
@@ -63,6 +64,12 @@ our $scenario = {
             name => 'Log::Any-null_adapter-1mil_is_trace' ,
             perl_cmdline_template => ['-MLog::Any', '-MLog::Any::Adapter', '-e', 'Log::Any::Adapter->set(q[Null]); my $log = Log::Any->get_logger; for(1..1_000_000) { $log->is_trace }'],
         },
+
+        {
+            name => 'Log::Log4perl-easy-1mil_trace' ,
+            perl_cmdline_template => ['-MLog::Log4perl=:easy', '-e', 'Log::Log4perl->easy_init($ERROR); for(1..1_000_000) { TRACE "" }'],
+        },
+
     ],
     precision => 6,
 };
