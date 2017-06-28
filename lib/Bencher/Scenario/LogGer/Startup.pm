@@ -25,8 +25,11 @@ our $scenario = {
         {name=>"use Log::Any" , module=>'Log::Any', perl_cmdline => ["-MLog::Any", "-e1"]},
         {name=>"use Log::Any + use LGA:Screen" , module=>'Log::Any::Adapter::Screen', perl_cmdline => ["-MLog::Any", "-MLog::Any::Adapter=Screen", "-e1"]},
 
-        {name=>"use Log::Log4perl", module=>'Log::Log4perl', perl_cmdline => ["-mLog::Log4perl=:easy", '-e1']},
-        {name=>"use Log::Log4perl + easy_init", module=>'Log::Log4perl', perl_cmdline => ["-mLog::Log4perl=:easy", '-e', 'Log::Log4perl->easy_init']},
+        {name=>"use Log::Log4perl ()", module=>'Log::Log4perl', perl_cmdline => ["-mLog::Log4perl", '-e1']},
+        {name=>"use Log::Log4perl + easy_init", module=>'Log::Log4perl', perl_cmdline => ["-MLog::Log4perl=:easy", '-e', 'Log::Log4perl->easy_init']},
+
+        {name=>"use Log::Log4perl::Tiny ()", module=>'Log::Log4perl::Tiny', perl_cmdline => ["-mLog::Log4perl::Tiny", '-e1']},
+        {name=>"use Log::Log4perl::Tiny :easy", module=>'Log::Log4perl::Tiny', perl_cmdline => ["-MLog::Log4perl::Tiny=:easy", '-e', 'Log::Log4perl->easy_init']},
     ],
 };
 

@@ -70,6 +70,11 @@ our $scenario = {
             perl_cmdline_template => ['-MLog::Log4perl=:easy', '-e', 'Log::Log4perl->easy_init($ERROR); for(1..1_000_000) { TRACE "" }'],
         },
 
+        {
+            name => 'Log::Log4perl::Tiny-1mil_trace' ,
+            perl_cmdline_template => ['-MLog::Log4perl::Tiny=:easy', '-e', 'for(1..1_000_000) { TRACE "" }'],
+        },
+
     ],
     precision => 6,
 };
