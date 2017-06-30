@@ -10,7 +10,7 @@ use warnings;
 our $scenario = {
     summary => 'Measure startup overhead of Log::ger vs other logging libraries',
     modules => {
-        'Log::ger' => {version=>'0.010'},
+        'Log::ger' => {version=>'0.011'},
     },
     participants => [
         {name=>"baseline", perl_cmdline => ["-e1"]},
