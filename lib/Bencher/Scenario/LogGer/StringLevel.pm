@@ -9,6 +9,9 @@ use warnings;
 
 our $scenario = {
     summary => 'Benchmark string_level()',
+    modules => {
+        'Log::ger::Util' => {version=>'0.008'},
+    },
     participants => [
         {
             fcall_template => 'Log::ger::Util::string_level(<level>)',
