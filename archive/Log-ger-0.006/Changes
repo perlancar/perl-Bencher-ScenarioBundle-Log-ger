@@ -1,0 +1,54 @@
+0.006   2017-06-24 (PERLANCAR)
+
+	- [Bugfix] Use the correct package when initializing object.
+
+
+0.005   2017-06-23 (PERLANCAR)
+
+        - [Incompatible change] Another round of internal refactoring and
+          interface changes. New: Log::ger::{Plugin,Format,Filter}. Every plugin
+          (including filter, format, output) can be set on a per-target basis or
+          globally. The term 'hooks' is in again. Add 'create_routine_names'
+          phase. Remove 'after_create_log_routine',
+          'after_create_log_is_routine'. Move FAQ & internals doc to
+          Log-ger-Manual dist.
+
+
+0.004   2017-06-21 (PERLANCAR)
+
+	- [Bugfix] Log::ger::Output didn't have VERSION.
+
+
+0.003   2017-06-21 (PERLANCAR)
+
+	- Split Log::ger::Output::Screen to its own dist so this dist can be
+	  more minimalist and that module can be tested e.g. with Capture::Tiny
+	  etc.
+
+	- String output: add option append_newline to allow disable
+	  appending newline.
+
+	- import(): No need to turn category 'Foo::Bar' -> 'foo.bar'.
+
+	- [doc] Update module name Log::ger::LogAny -> Log::ger::Output::LogAny.
+
+
+0.002    2017-06-21 (PERLANCAR)
+
+         - [Incompatible change] Reorganize internals & fix a couple of doc
+           typos.
+
+         - Add outputs: Null, String (mainly for testing).
+
+         - Formatter: format undef as '<undef>' like in Log::Any.
+
+         - Screen output: Add hooks for
+           Progress::Any::Output::TermProgressBarColor, like in
+           Log::Any::Adapter::Screen.
+
+         - Add some tests.
+
+
+0.001    2017-06-19 (PERLANCAR)
+
+         - First release.

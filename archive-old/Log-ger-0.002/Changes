@@ -1,0 +1,18 @@
+0.002    2017-06-21 (PERLANCAR)
+
+         - Reorganize internals & fix a couple of doc typos.
+
+         - Add outputs: Null, String (mainly for testing).
+
+         - Formatter: format undef as '<undef>' like in Log::Any.
+
+         - Screen output: Add hooks for
+           Progress::Any::Output::TermProgressBarColor, like in
+           Log::Any::Adapter::Screen.
+
+         - Add some tests.
+
+
+0.001    2017-06-19 (PERLANCAR)
+
+         - First release.

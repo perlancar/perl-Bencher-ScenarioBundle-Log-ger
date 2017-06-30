@@ -1,0 +1,131 @@
+SYNOPSIS
+
+    In your module (producer):
+
+     package Foo;
+     use Log::ger; # will import some logging methods e.g. log_warn, log_error
+    
+     # produce some logs
+     sub foo {
+         ...
+         log_warn "an error occurred";
+         log_error "an error occurred: %03d - %s", $errcode, $errmsg;
+     }
+     1;
+
+    In your application:
+
+     use Foo;
+     use Log::ger::Output::Screen;
+    
+     foo();
+
+DESCRIPTION
+
+    EARLY RELEASE, EXPERIMENTAL.
+
+    This is yet another logging framework. Like Log::Any, it separates
+    producers and consumers. Unlike Log::Any (and like Log::Contextual), it
+    uses plain functions (non-OO). Some features:
+
+      * Low startup overhead;
+
+      * Low overhead;
+
+      * Customizable levels;
+
+      * Changing levels and outputs during run-time;
+
+      For example, you can debug your running server application to turn on
+      trace logs temporarily when you need to investigate something.
+
+      * Option to optimize away the logging statements when unnecessary;
+
+      See Log::ger::Import::OptAway.
+
+      * Interoperability with other logging frameworks;
+
+      See Log::ger::Import::LogAny to interop with Log::Any.
+
+INTERNALS
+
+ Hooks
+
+    Hooks are how Log::ger provides its flexibility. A hook is passed a
+    hash argument and is expected to return an array:
+
+     [$err*, ...]
+
+    $err is a string and can be set to "" to signify success or a non-empty
+    error message to signify error. Log::ger usually dies after a hook
+    returns error.
+
+ Create_Log_Routine hook
+
+    Used to create "log_level" routines.
+
+    Arguments received: name (name of subroutine, e.g. log_warn), level
+    (numeric level), package, prev (coderef).
+
+    Expected return:
+
+     [$err*, $code, $continue]
+
+    Hook that wants to decline can return undef in $code. Log::ger will
+    stop after the hook that produces a non-undef code unless when set to
+    $continue 1 then Log::ger will continue to the next hook and passing
+    the code to prev to allow onion-style nesting of code.
+
+ Create_Log_Is_Routine hook
+
+    Used to create "log_level" routines.
+
+ Install_Routine hook
+
+    Used to install to the caller (log producer) package.
+
+    Arguments: package (target package to install to), name (routine name),
+    code (routine code), level (the numeric level of the routine).
+
+    Expected return:
+
+     [$err*, $installed]
+
+    $installed can be set to 1 to signify that the hook has installed the
+    routine, so Log::err will stop. Otherwise, Log::ger will try the next
+    hook.
+
+ Plans
+
+      * Multiple loggers
+
+      To support logging to two+ different loggers in the same producer
+      package, a la in Log::Any:
+
+       $log->debugf("Headers is: %s", $http_res->{headers});
+       $log_dump->debug($http_res->{content});
+
+      we can do something like (XXX find a more appropriate name):
+
+       my $log      = Log::ger::install_to_object(...); # instead of installing to package
+       my $log_dump = Log::ger::install_to_object(...); # or perhaps install to hash?
+       $log->log_debug(...);
+       $log_dump->log_debug(...);
+
+      * Custom formatting
+
+      For example, a la Log::Contextual:
+
+       log_warn { 'The number of stuffs is: ' . $obj->stuffs_count };
+
+      * Multiple outputs, filtering based on category
+
+      With the exception of the default/null routines (and perhaps the
+      simple Screen output too), the other logging routines should be
+      constructed using a code generation approach so we can have multiple
+      outputs, etc.
+
+SEE ALSO
+
+    Some other recommended logging frameworks: Log::Any, Log::Contextual.
+
