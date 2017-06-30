@@ -10,8 +10,8 @@ use warnings;
 our $scenario = {
     summary => 'Benchmark Log::ger logging speed with the default/null output',
     modules => {
-        'Log::ger' => {version=>'0.005'},
-        'Log::ger::Plugin::SingleLog' => {},
+        'Log::ger' => {version=>'0.011'},
+        'Log::ger::Plugin::MultilevelLog' => {},
         'Log::ger::Plugin::OptAway' => {},
         'Log::Any' => {},
         'Log::Fast' => {},
@@ -32,12 +32,12 @@ our $scenario = {
             perl_cmdline_template => ['-MLog::ger::Plugin=OptAway', '-MLog::ger', '-e', 'for(1..1_000_000) { log_trace(q[]) }'],
         },
         {
-            name => 'Log::ger+LGP:SingleLog-1mil_log_trace',
-            perl_cmdline_template => ['-MLog::ger::Plugin=SingleLog', '-MLog::ger', '-e', 'for(1..1_000_000) { log("trace", q[]) }'],
+            name => 'Log::ger+LGP:MutilevelLog-1mil_log_trace',
+            perl_cmdline_template => ['-MLog::ger::Plugin=MultilevelLog', '-MLog::ger', '-e', 'for(1..1_000_000) { log("trace", q[]) }'],
         },
         {
-            name => 'Log::ger+LGP:SingleLog-1mil_log_6',
-            perl_cmdline_template => ['-MLog::ger::Plugin=SingleLog', '-MLog::ger', '-e', 'for(1..1_000_000) { log(6, q[]) }'],
+            name => 'Log::ger+LGP:MutilevelLog-1mil_log_6',
+            perl_cmdline_template => ['-MLog::ger::Plugin=MultilevelLog', '-MLog::ger', '-e', 'for(1..1_000_000) { log(6, q[]) }'],
         },
 
         {
