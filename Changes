@@ -1,3 +1,10 @@
+0.009   2017-07-02 (PERLANCAR)
+
+        - Add scenarios: LayoutStartup, InitTarget.
+
+        - Add past Log::ger versions to sample Startup benchmark.
+
+
 0.008   2017-06-30 (PERLANCAR)
 
 	- Bump Log::ger version to 0.011.

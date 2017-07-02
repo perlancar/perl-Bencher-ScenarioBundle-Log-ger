@@ -33,6 +33,7 @@ our %output_modules = (
 
 our $scenario = {
     modules => {
+        'Log::ger::Output::Composite' => {version=>'0.005'},
     },
     participants => [
         {name=>"baseline", perl_cmdline => ["-e1"]},
