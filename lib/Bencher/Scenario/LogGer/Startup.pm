@@ -15,6 +15,7 @@ our $scenario = {
     summary => 'Measure startup overhead of Log::ger vs other logging libraries',
     modules => {
         'Log::ger' => {version=>'0.011'},
+        'Log::ger::App' => {version=>'0.002'},
         'Log::ger::Output' => {version=>'0.005'},
         'Log::ger::Layout::Pattern' => {version=>'0'},
     },
@@ -36,7 +37,6 @@ our $scenario = {
 
         {name=>"use Log::Any" , module=>'Log::Any', perl_cmdline => ["-MLog::Any", "-e1"]},
         {name=>"use Log::Any + use LGA:Screen" , module=>'Log::Any::Adapter::Screen', perl_cmdline => ["-MLog::Any", "-MLog::Any::Adapter=Screen", "-e1"]},
-        {name=>"use Log::Any::App" , module=>'Log::Any::App', perl_cmdline => ["-MLog::Any::App", "-e1"]},
 
         {name=>"use Log::Log4perl ()", module=>'Log::Log4perl', perl_cmdline => ["-mLog::Log4perl", '-e1']},
         {name=>"use Log::Log4perl + easy_init", module=>'Log::Log4perl', perl_cmdline => ["-MLog::Log4perl=:easy", '-e', 'Log::Log4perl->easy_init']},
