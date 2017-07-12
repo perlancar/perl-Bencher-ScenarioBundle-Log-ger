@@ -31,6 +31,7 @@ our $scenario = {
         {name=>"use Log::ger + use LGO:Composite (2 outputs)", module=>'Log::ger::Output::Composite', perl_cmdline => ["-e", qq(use Log::ger::Output Composite => (outputs=>{Screen=>{}, File=>{conf=>{path=>'$fname'}}}); use Log::ger)]},
         {name=>"use Log::ger + use LGO:Composite (2 outputs + pattern layouts)", module=>'Log::ger::Output::Composite', perl_cmdline => ["-e", qq(use Log::ger::Output Composite => (outputs=>{Screen=>{layout=>[Pattern=>{format=>"[%d] %m"}]}, File=>{conf=>{path=>'$fname'}, layout=>[Pattern=>{format=>"[%d] [%P] %m"}]}}); use Log::ger)]},
         {name=>"use Log::ger::Like::LogAny" , module=>'Log::ger::Like::LogAny', perl_cmdline => ["-MLog::ger::Like::LogAny", "-e1"]},
+        {name=>"use Log::ger::Like::Log4perl" , module=>'Log::ger::Like::Log4perl', perl_cmdline => ["-MLog::ger::Like::Log4perl", "-e1"]},
 
         {name=>"use Log::Any" , module=>'Log::Any', perl_cmdline => ["-MLog::Any", "-e1"]},
         {name=>"use Log::Any + use LGA:Screen" , module=>'Log::Any::Adapter::Screen', perl_cmdline => ["-MLog::Any", "-MLog::Any::Adapter=Screen", "-e1"]},
