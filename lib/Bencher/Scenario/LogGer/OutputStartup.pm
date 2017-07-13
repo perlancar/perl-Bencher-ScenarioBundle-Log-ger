@@ -29,6 +29,7 @@ our %output_modules = (
     LogAny => {},
     LogDispatchOutput => { output => 'ArrayWithLimits', args => {array => $ary} },
     Composite => { outputs => {Screen => {conf=>{}}, File => {conf=>{path=>$fname}}} },
+    Syslog => { ident => 'test' },
 );
 
 our $scenario = {
