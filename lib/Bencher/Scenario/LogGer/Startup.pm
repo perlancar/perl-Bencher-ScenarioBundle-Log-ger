@@ -14,7 +14,7 @@ my ($fh, $fname) = tempfile();
 our $scenario = {
     summary => 'Measure startup overhead of Log::ger vs other logging libraries',
     modules => {
-        'Log::ger' => {version=>'0.011'},
+        'Log::ger' => {version=>'0.015'},
         'Log::ger::App' => {version=>'0.002'},
         'Log::ger::Output' => {version=>'0.005'},
         'Log::ger::Layout::Pattern' => {version=>'0'},
@@ -25,6 +25,7 @@ our $scenario = {
         {name=>"use Log::ger ()", module=>'Log::ger', perl_cmdline => ["-mLog::ger", "-e1"]},
 
         {name=>"use Log::ger" , module=>'Log::ger', perl_cmdline => ["-MLog::ger", "-e1"]},
+        {name=>"use Log::ger + get_logger()" , module=>'Log::ger', perl_cmdline => ["-mLog::ger", "-e", '$log = Log::ger->get_logger()']},
         {name=>"use Log::ger + use LGP:OptAway", module=>'Log::ger::Plugin::OptAway', perl_cmdline => ["-MLog::ger::Plugin::OptAway", "-MLog::ger", "-e1"]},
         {name=>"use Log::ger + use LGO:Screen", module=>'Log::ger::Output::Screen', perl_cmdline => ["-MLog::ger", "-MLog::ger::Output=Screen", "-e1"]},
         {name=>"use Log::ger + use LGO:File", module=>'Log::ger::Output::File', perl_cmdline => ["-e", qq(use Log::ger::Output File => (path=>'$fname'); use Log::ger)]},
