@@ -1,0 +1,142 @@
+Revision history for Log-Any
+
+** denotes an incompatible change
+
+1.00      2014-12-25 22:04:13-05:00 America/New_York
+
+    [Added]
+
+    - Logging now goes via a Log::Any::Proxy object instead of directly to
+      an adapter. This allows easy customization of the message production.
+
+    - File, Stdout, and Stderr adapters now support a minimum
+      log level parameter.
+
+    [Changed]
+
+    - Removed dead code from Log::Any::Adapter::Base; particularly this
+      was the formatting code, since this is now handled by
+      Log::Any::Proxy.
+
+    [Fixed]
+
+    - File will flock the handle when writing (if flock is avaiable).
+
+    - Won't die if adapters aren't loadable modules as long as they
+      provide a constructor.  This allows using private adapters
+      defined in another file.
+
+    [Documented]
+
+    - Revised docs for creating adapters
+
+    - Fixed typos and improved docs for Log::Any::Adapter::Util; removed
+      stub docs for modules that didn't need it.
+
+    [Deprecated]
+
+    - Deprecated some methods in Log::Any::Adapter::Util
+
+    [Internal]
+
+    - Merged Log-Any and Log-Any-Adapter distributions; reduces code
+      duplication and ensures Log::Any and adapter framework stay in sync
+
+    - Eliminates all non-core dependencies (as of Perl 5.8.1), including
+      Capture::Tiny, Devel::GlobalDestruction and Guard
+
+0.92      2014-12-15 07:12:38-05:00 America/New_York (TRIAL RELEASE)
+
+0.91      2014-12-14 22:13:09-05:00 America/New_York (TRIAL RELEASE)
+
+0.90      2014-12-12 17:08:22-05:00 America/New_York (TRIAL RELEASE)
+
+0.15  Apr 10, 2013
+
+* Fixes
+  - Hide 'package Log::Any::Adapter' from PAUSE/Module::Metadata - miyagawa
+
+0.14  Aug 31, 2011
+
+* Fixes
+  - Fix version number in Log/Any.pm - Stephen Thirlwall
+
+0.13  Aug 2, 2011
+
+* Fixes
+  - Fix typo in lib/Log/Any/Adapter/Test.pm - RT #69850 - Stephen Thirlwall
+
+0.12  Mar 23, 2011
+
+* Fixes
+  - Return false from null adapter is_xxx methods - RT #64164 - Chip Salzenberg
+  - Eliminate 'subroutine redefined' warning in case Log::Any::Adapter loaded before
+    Log::Any::Test
+
+* Implementation
+  - Migrate to Dist::Zilla
+
+0.11  Feb 12, 2010
+
+* Improvements
+  - Add trace level - suggested by Szymon Swierkosz
+
+0.10  Jan 5, 2010
+
+* Fixes
+  - Fix Log::Any::Core to support references in printf-style methods
+
+0.09  Jan 5, 2010
+
+* Improvements
+  - Convert undef to string "<undef>" in printf-style methods - RT #53398, suggested by Steven Haryanto
+
+0.08  Dec 15, 2009
+
+* Fixes
+  - Fix Log::Any::Test to support full logging API (aliases and printf methods)
+
+0.07  Dec 7, 2009
+
+* Implementation
+  - Depend on Test::Simple rather than Test::More
+
+* Improvements
+  - Add Log::Any::Test, to aid in testing code that uses Log::Any
+
+0.06  Oct 31, 2009
+
+* Fixes
+  - Implement Log::Any->set_adapter again for backward compatibility with 0.04 and earlier
+
+0.05  Oct 27, 2009
+
+* Implementation
+  - ** Strip Log::Any down to a relative minimum, so as to keep it stable and
+    unchanging. Move everything else to Log::Any::Adapter.
+
+0.04  Sep 3, 2009
+
+* Fixes
+  - Replace Test::Deep::cmp_deeply with an internal version to avoid Test::Deep dependency
+
+0.03  Jul 17, 2009
+
+* Improvements
+  - Eliminated extra '::Log' from adapter names, e.g. Log::Any::Adapter::Log::Dispatch is
+    now Log::Any::Adapter::Dispatch. The long name was properly descriptive but was making
+    me wince every time.
+
+0.02  Jul 14, 2009
+
+* Fixes
+  - Fix logging aliases like warn => warning
+
+* Implementation
+  - Eliminate unnecessary Test/InternalOnly.pm class
+  - Precompute alias and method lists like Log::Any->logging_methods
+
+0.01  Jul 11, 2009
+
+- Initial version
+
