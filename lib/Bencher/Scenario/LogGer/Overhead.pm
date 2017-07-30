@@ -19,6 +19,7 @@ our $scenario = {
         'Log::ger::App' => {version=>'0.002'},
         'Log::ger::Output' => {version=>'0.005'},
         'Log::ger::Layout::Pattern' => {version=>'0'},
+        'Log::Contextual' => {version=>'0'},
     },
     code_startup => 1,
     participants => [
@@ -31,7 +32,7 @@ our $scenario = {
         {code_template=>'use Log::Any;'},
         {code_template=>'use Log::Any q($log);'},
 
-
+        {code_template=>'use Log::Contextual qw(:log);'},
     ],
 };
 
