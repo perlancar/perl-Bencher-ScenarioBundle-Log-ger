@@ -20,6 +20,9 @@ our $scenario = {
         'Log::ger::Output' => {version=>'0.005'},
         'Log::ger::Layout::Pattern' => {version=>'0'},
         'Log::Contextual' => {version=>'0'},
+        'Log::Log4perl' => {version=>'0'},
+        'Log::Log4perl::Tiny' => {version=>'0'},
+        'Log::Dispatchouli' => {version=>'0'},
     },
     code_startup => 1,
     participants => [
@@ -33,6 +36,12 @@ our $scenario = {
         {code_template=>'use Log::Any q($log);'},
 
         {code_template=>'use Log::Contextual qw(:log);'},
+
+        {code_template=>'use Log::Log4perl;'},
+
+        {code_template=>'use Log::Log4perl::Tiny;'},
+
+        {code_template=>'use Log::Dispatchouli;'},
     ],
 };
 
