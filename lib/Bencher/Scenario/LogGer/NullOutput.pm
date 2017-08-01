@@ -77,6 +77,10 @@ our $scenario = {
         },
 
         {
+            name => 'Log::Contextual+Log4perl' ,
+            perl_cmdline_template => ['-e', 'use Log::Contextual ":log", "set_logger"; use Log::Log4perl ":easy"; Log::Log4perl->easy_init($DEBUG); my $logger = Log::Log4perl->get_logger; set_logger $logger; for(1..1_000_000) { log_trace {} }'],
+        },
+        {
             name => 'Log::Contextual+SimpleLogger' ,
             perl_cmdline_template => ['-MLog::Contextual::SimpleLogger', '-e', 'use Log::Contextual ":log", -logger=>Log::Contextual::SimpleLogger->new({levels=>["debug"]}); for(1..1_000_000) { log_trace {} }'],
         },
