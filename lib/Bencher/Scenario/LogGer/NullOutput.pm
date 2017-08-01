@@ -80,6 +80,11 @@ our $scenario = {
             name => 'Log::Contextual+SimpleLogger' ,
             perl_cmdline_template => ['-MLog::Contextual::SimpleLogger', '-e', 'use Log::Contextual ":log", -logger=>Log::Contextual::SimpleLogger->new({levels=>["debug"]}); for(1..1_000_000) { log_trace {} }'],
         },
+
+        {
+            name => 'Log::Dispatchouli' ,
+            perl_cmdline_template => ['-MLog::Dispatchouli', '-e', '$logger = Log::Dispatchouli->new({ident=>"ident", facility=>"facility", to_stdout=>1, debug=>0}); for(1..1_000_000) { $logger->log_debug("") }'],
+        },
     ],
     precision => 6,
 };
