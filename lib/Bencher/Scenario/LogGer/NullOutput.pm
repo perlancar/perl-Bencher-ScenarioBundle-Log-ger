@@ -17,6 +17,9 @@ our $scenario = {
         'Log::Fast' => {},
         'Log::Log4perl' => {},
         'Log::Log4perl::Tiny' => {},
+        'Log::Contextual' => {},
+        'Log::Contextual::SimpleLogger' => {},
+        'Log::Dispatchouli' => {},
     },
     participants => [
         {
