@@ -14,7 +14,7 @@ my ($fh, $fname) = tempfile();
 our $scenario = {
     summary => 'Measure startup overhead of Log::ger vs other logging libraries',
     modules => {
-        'Log::ger' => {version=>'0.015'},
+        'Log::ger' => {version=>'0.019'},
         'Log::ger::App' => {version=>'0.002'},
         'Log::ger::Output' => {version=>'0.005'},
         'Log::ger::Layout::Pattern' => {version=>'0'},
