@@ -10,7 +10,7 @@ use warnings;
 our $scenario = {
     summary => 'Benchmark Log::ger logging speed with the default/null output',
     modules => {
-        'Log::ger' => {version=>'0.019'},
+        'Log::ger' => {version=>'0.023'},
         'Log::ger::Plugin::MultilevelLog' => {},
         'Log::ger::Plugin::OptAway' => {},
         'Log::Any' => {},
