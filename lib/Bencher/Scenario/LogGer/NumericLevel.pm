@@ -15,7 +15,7 @@ our $scenario = {
         },
     ],
     datasets => [
-        {args=>{level=>1}},
+        {args=>{level=>10}},
         {args=>{level=>'warn'}},
     ],
 };
