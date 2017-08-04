@@ -31,6 +31,10 @@ our $scenario = {
         {code_template=>'use Log::ger; Log::ger->get_logger;'},
         {code_template=>'use Log::ger::App;'},
         {code_template=>'use Log::ger::App; use Log::ger;'},
+        {code_template=>'use Log::ger::Plugin::OptAway; use Log::ger;'},
+        {code_template=>'use Log::ger::Like::LogAny;'},
+        {code_template=>'use Log::ger::Like::Log4perl;'},
+        {code_template=>'use Log::ger::App;'},
 
         {code_template=>'use Log::Any;'},
         {code_template=>'use Log::Any q($log);'},
@@ -42,6 +46,14 @@ our $scenario = {
         {code_template=>'use Log::Log4perl::Tiny;'},
 
         {code_template=>'use Log::Dispatchouli;'},
+
+        {code_template=>'use Log::ger::Output::Screen;', tags=>['output']},
+        {code_template=>'use Log::ger::Output::Composite;', tags=>['output']},
+
+        # TODO: Lg + Composite (2 outputs)
+        # TODO: Lg + Composite (2 outputs + pattern layouts)
+        # TODO: Log::Any + Screen
+        # TODO: Log::Log4perl + easy_init
     ],
 };
 
