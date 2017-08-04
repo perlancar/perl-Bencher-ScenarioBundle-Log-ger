@@ -20,14 +20,14 @@ our %output_modules = (
     String => { string => \$str },
     Array => { array => $ary },
 
-    ArrayWithLimits => { array => $ary },
+    ArrayRotate => { array => $ary },
     File => { path => $fname },
     Screen => {},
     Callback => {},
     FileWriteRotate => { dir => $dname, prefix => 'prefix' },
     DirWriteRotate => { path => $dname },
     LogAny => {},
-    LogDispatchOutput => { output => 'ArrayWithLimits', args => {array => $ary} },
+    #LogDispatchOutput => { output => 'ArrayWithLimits', args => {array => $ary} }, # Log::Dispatch::ArrayWithLimits already removed from CPAN
     Composite => { outputs => {Screen => {conf=>{}}, File => {conf=>{path=>$fname}}} },
     Syslog => { ident => 'test' },
 );
