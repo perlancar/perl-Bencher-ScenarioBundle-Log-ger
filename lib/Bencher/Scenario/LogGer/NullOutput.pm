@@ -22,6 +22,7 @@ our $scenario = {
         'Log::Dispatch' => {},
         'Log::Dispatch::Null' => {},
         'Log::Dispatchouli' => {},
+        'Mojo::Log' => {},
     },
     participants => [
         {
@@ -98,6 +99,11 @@ our $scenario = {
         {
             name => 'Log::Dispatchouli-100k_debug' ,
             perl_cmdline_template => ['-MLog::Dispatchouli', '-e', '$logger = Log::Dispatchouli->new({ident=>"ident", facility=>"facility", to_stdout=>1, debug=>0}); for(1..100_000) { $logger->log_debug("") }'],
+        },
+
+        {
+            name => 'Mojo::Log-100k_debug' ,
+            perl_cmdline_template => ['-MMojo::Log', '-e', '$log = Mojo::Log->new(level=>"warn"); for(1..100_000) { $log->debug("") }'],
         },
     ],
     precision => 6,
