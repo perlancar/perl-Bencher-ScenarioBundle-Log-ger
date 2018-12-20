@@ -20,6 +20,8 @@ our $scenario = {
         'Log::ger::Output' => {version=>'0.005'},
         'Log::ger::Layout::Pattern' => {version=>'0'},
         'Log::Contextual' => {version=>'0'},
+        'Log::Dispatch' => {version=>'0'},
+        'Log::Dispatch::Null' => {version=>'0'},
         'Log::Log4perl' => {version=>'0'},
         'Log::Log4perl::Tiny' => {version=>'0'},
         'Log::Dispatchouli' => {version=>'0'},
@@ -44,6 +46,9 @@ our $scenario = {
         {code_template=>'use Log::Log4perl;'},
 
         {code_template=>'use Log::Log4perl::Tiny;'},
+
+        {code_template=>'use Log::Dispatch;'},
+        {code_template=>'use Log::Dispatch; my $null = Log::Dispatch->new(outputs=>[ ["Null", min_level=>"warn"] ])', tags=>['output']},
 
         {code_template=>'use Log::Dispatchouli;'},
 

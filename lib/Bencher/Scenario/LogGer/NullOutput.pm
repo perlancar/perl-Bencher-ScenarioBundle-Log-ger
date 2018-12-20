@@ -70,6 +70,11 @@ our $scenario = {
         },
 
         {
+            name => 'Log::Dispatch::Null-1mil_debug' ,
+            perl_cmdline_template => ['-MLog::Dispatch', '-e', 'my $null = Log::Dispatch->new(outputs=>[["Null", min_level=>"debug"]]); for(1..1_000_000) { $null->debug("") }'],
+        },
+
+        {
             name => 'Log::Log4perl-easy-1mil_trace' ,
             perl_cmdline_template => ['-MLog::Log4perl=:easy', '-e', 'Log::Log4perl->easy_init($ERROR); for(1..1_000_000) { TRACE "" }'],
         },
