@@ -29,6 +29,11 @@ our $scenario = {
     },
     code_startup => 1,
     participants => [
+        # a benchmark for Log::ger: strict/warnings
+        {code_template=>'use strict;'},
+        {code_template=>'use warnings;'},
+        {code_template=>'use strict; use warnings;'},
+
         {code_template=>'use Log::ger ();'},
         {code_template=>'use Log::ger;'},
         {code_template=>'use Log::ger; Log::ger->get_logger;'},
