@@ -37,7 +37,7 @@ our $scenario = {
         'Log::ger::Output::Composite' => {version=>'0.009'},
         'Log::ger::Output::File' => {version=>'0.002'},
         'Log::ger::Output::LogAny' => {version=>'0.003'},
-        'Log::ger::Output::Screen' => {version=>'0.007'},
+        'Log::ger::Output::Screen' => {version=>'0.015'},
     },
     participants => [
         {name=>"baseline", perl_cmdline => ["-e1"]},
