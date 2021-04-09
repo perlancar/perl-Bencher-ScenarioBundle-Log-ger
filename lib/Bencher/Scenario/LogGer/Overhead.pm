@@ -26,6 +26,7 @@ our $scenario = {
         'Log::Log4perl::Tiny' => {version=>'0'},
         'Log::Dispatchouli' => {version=>'0'},
         'Mojo::Log' => {version=>'0'},
+        'XLog' => {},
     },
     code_startup => 1,
     participants => [
@@ -63,6 +64,8 @@ our $scenario = {
 
         {code_template=>'use Mojo::Log;'},
         {code_template=>'use Mojo::Log; my $log=Mojo::Log->new(level=>"warn")'},
+
+        {code_template=>'use XLog;'},
 
         # TODO: Lg + Composite (2 outputs)
         # TODO: Lg + Composite (2 outputs + pattern layouts)
