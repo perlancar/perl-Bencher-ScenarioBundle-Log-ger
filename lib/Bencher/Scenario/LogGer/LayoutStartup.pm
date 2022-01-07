@@ -1,11 +1,13 @@
 package Bencher::Scenario::LogGer::LayoutStartup;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 our %layout_modules = (
     Pattern => {format=>'[%d] %m'},

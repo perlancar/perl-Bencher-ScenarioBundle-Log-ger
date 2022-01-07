@@ -1,13 +1,15 @@
 package Bencher::Scenario::LogGer::Overhead;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
 
 use File::Temp qw(tempfile);
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 my ($fh, $fname) = tempfile();
 

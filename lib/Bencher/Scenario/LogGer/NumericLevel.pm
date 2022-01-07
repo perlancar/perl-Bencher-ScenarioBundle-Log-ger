@@ -1,11 +1,13 @@
 package Bencher::Scenario::LogGer::NumericLevel;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 our $scenario = {
     summary => 'Benchmark numeric_level()',

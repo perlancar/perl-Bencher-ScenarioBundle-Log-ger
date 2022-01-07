@@ -1,14 +1,16 @@
 package Bencher::Scenario::LogGer::OutputStartup;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
 
 use Data::Dmp;
 use File::Temp qw(tempdir tempfile);
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 my $str;
 my $ary = [];
