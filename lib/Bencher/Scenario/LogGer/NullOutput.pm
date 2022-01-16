@@ -1,11 +1,13 @@
 package Bencher::Scenario::LogGer::NullOutput;
 
-# DATE
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 our $scenario = {
     summary => 'Benchmark Log::ger logging speed with the default/null output',
@@ -117,3 +119,15 @@ our $scenario = {
 
 1;
 # ABSTRACT:
+
+=head1 BENCHMARK NOTES
+
+Not included here:
+
+=over
+
+=item * L<Log::Tiny>
+
+Cannot do null output, must log to a file. (Technically you can use F</dev/null>, but.)
+
+=back
