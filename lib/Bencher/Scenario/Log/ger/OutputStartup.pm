@@ -1,4 +1,4 @@
-package Bencher::Scenario::LogGer::OutputStartup;
+package Bencher::Scenario::Log::ger::OutputStartup;
 
 use 5.010001;
 use strict;

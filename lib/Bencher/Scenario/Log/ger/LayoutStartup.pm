@@ -1,4 +1,4 @@
-package Bencher::Scenario::LogGer::LayoutStartup;
+package Bencher::Scenario::Log::ger::LayoutStartup;
 
 use 5.010001;
 use strict;

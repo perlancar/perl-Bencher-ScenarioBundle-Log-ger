@@ -1,4 +1,4 @@
-package Bencher::Scenario::LogGer::NumericLevel;
+package Bencher::Scenario::Log::ger::StringLevel;
 
 use 5.010001;
 use strict;
@@ -10,10 +10,13 @@ use warnings;
 # VERSION
 
 our $scenario = {
-    summary => 'Benchmark numeric_level()',
+    summary => 'Benchmark string_level()',
+    modules => {
+        'Log::ger::Util' => {version=>'0.008'},
+    },
     participants => [
         {
-            fcall_template => 'Log::ger::Util::numeric_level(<level>)',
+            fcall_template => 'Log::ger::Util::string_level(<level>)',
         },
     ],
     datasets => [

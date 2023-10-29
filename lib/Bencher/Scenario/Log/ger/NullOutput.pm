@@ -1,4 +1,4 @@
-package Bencher::Scenario::LogGer::NullOutput;
+package Bencher::Scenario::Log::ger::NullOutput;
 
 use 5.010001;
 use strict;

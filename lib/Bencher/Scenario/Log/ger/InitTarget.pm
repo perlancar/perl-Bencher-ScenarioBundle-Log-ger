@@ -1,4 +1,4 @@
-package Bencher::Scenario::LogGer::InitTarget;
+package Bencher::Scenario::Log::ger::InitTarget;
 
 use 5.010001;
 use strict;

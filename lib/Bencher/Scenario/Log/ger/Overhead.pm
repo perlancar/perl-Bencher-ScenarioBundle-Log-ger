@@ -1,4 +1,4 @@
-package Bencher::Scenario::LogGer::Overhead;
+package Bencher::Scenario::Log::ger::Overhead;
 
 use 5.010001;
 use strict;
