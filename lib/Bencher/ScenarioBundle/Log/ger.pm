@@ -1,4 +1,4 @@
-package Bencher::Scenarios::Log::ger;
+package Bencher::ScenarioBundle::Log::ger;
 
 use strict;
 
